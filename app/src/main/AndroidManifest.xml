@@ -29,6 +29,7 @@
         <activity android:name=".RegisterActivity">
 
         </activity>
+        <service android:name=".MyService"/>
     </application>
 
 </manifest>

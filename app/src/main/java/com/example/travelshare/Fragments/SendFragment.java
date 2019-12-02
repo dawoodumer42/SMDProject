@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 
 import com.example.travelshare.Classes.RVAdapter;
 import com.example.travelshare.Classes.TripsData;
+import com.example.travelshare.Classes.myTripsData;
 import com.example.travelshare.R;
 
 import java.util.ArrayList;
@@ -51,6 +52,8 @@ public class SendFragment extends Fragment {
 
     public void FeedData()
     {
-        //Insert data through API into Ttrips here.
+        TripsData sample1= new TripsData("12","32","45","523","lol");
+        Ttrips.add(sample1);
+        //Get data from API and add here.
     }
 }

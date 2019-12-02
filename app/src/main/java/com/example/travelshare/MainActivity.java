@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.travelroom.TravelDB;
 import com.example.travelshare.Classes.RetrofitClient;
 import com.example.travelshare.Classes.User;
 import com.google.gson.JsonObject;
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Register = (Button) findViewById(R.id.register);
         Login = (Button) findViewById(R.id.sign_in);
 
+        startService(new Intent(this, MyService.class));
         LoginExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +91,8 @@ public class MainActivity extends AppCompatActivity {
         JsonObject obj = new JsonObject();
         obj.addProperty("email", email);
         obj.addProperty("pass", pass);
-
+        TravelDB travelDB= new TravelDB(getApplicationContext());
+        travelDB.insertUser(pass,email);
         Call<User> user = RetrofitClient.getClient().login(obj);
         user.enqueue(new Callback<User>() {
             @Override

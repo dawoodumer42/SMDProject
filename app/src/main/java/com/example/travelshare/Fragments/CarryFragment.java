@@ -1,5 +1,6 @@
 package com.example.travelshare.Fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -26,6 +27,7 @@ import java.util.List;
 
 public class CarryFragment extends Fragment {
     Button plus;
+    Context context;
     public CarryFragment()
     {
         //empty constructor
@@ -36,7 +38,7 @@ public class CarryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_blank_fragment2,container,false);
         RecyclerView CarryRV = view.findViewById(R.id.myRV2);
-        CarryRV.setLayoutManager(new LinearLayoutManager(getContext()));
+        CarryRV.setLayoutManager(new LinearLayoutManager(context));
         RVAdapterCarry myAdapter= new RVAdapterCarry(FeedDataMTrips(),getContext());
         CarryRV.setAdapter(myAdapter);
         plus =  view.findViewById(R.id.plus_button);
@@ -53,6 +55,10 @@ public class CarryFragment extends Fragment {
         List<myTripsData> mylist= new ArrayList<>();
         myTripsData sample= new myTripsData("123","xd123","lmao","lol");
         mylist.add(sample);
+        myTripsData sample1= new myTripsData("123","xd123","lmao","lol");
+        mylist.add(sample1);
         return mylist;
+
+        //Get Data from API and add here.
     }
 }

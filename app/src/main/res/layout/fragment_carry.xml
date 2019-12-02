@@ -74,34 +74,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_editor_absoluteX="0dp" />
 
-            <ImageView
-                android:id="@+id/forward_arrow"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="200dp"
-                android:contentDescription="todoo"
-                android:src="@drawable/ic_chevron_right_black_24dp" />
-
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/plus_button"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="44dp"
-        android:background="@drawable/plus_button"
-        android:padding="5dp"
-        android:text="+"
-        android:textColor="#ffffff"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.919"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
 

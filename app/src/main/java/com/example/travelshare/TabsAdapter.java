@@ -30,8 +30,8 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
                 CarryFragment carry = new CarryFragment();
                 return carry;
             case 3:
-                RequestsFragment requests = new RequestsFragment();
-                return requests;
+                RequestsFragment requestsFragment = new RequestsFragment();
+                return requestsFragment;
             default:
                 return null;
         }

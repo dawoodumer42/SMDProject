@@ -35,14 +35,14 @@
         android:id="@+id/description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:padding="9dp"
         android:text="This is not your username or pin; This name will be visible to yout VCourier Contacts"
-        android:textColor="@color/colorGrey"
+        android:textColor="@color/colorBlue"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/editText"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="30dp" />
+        tools:layout_editor_absoluteX="9dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInput_phone"
@@ -68,34 +68,21 @@
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
-        android:id="@+id/cancel_button"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
-        android:background="@drawable/button_rounded"
-        android:text="CANCEL"
-        android:textColor="#ffffff"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/textInput_phone"
-        app:layout_constraintHorizontal_bias="0.649"
-        app:layout_constraintStart_toEndOf="@+id/save_button"
-        app:layout_constraintTop_toBottomOf="@+id/textInput_phone" />
 
     <Button
         android:id="@+id/save_button"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="124dp"
         android:background="@drawable/button_rounded"
         android:text="SAVE"
         android:textColor="#ffffff"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/other_text"
-        app:layout_constraintStart_toStartOf="@+id/textInput_phone" />
-
+        app:layout_constraintStart_toStartOf="@+id/textInput_phone"
+        app:layout_constraintTop_toBottomOf="@+id/textInput_phone" />
 
     <TextView
         android:id="@+id/other_text"
