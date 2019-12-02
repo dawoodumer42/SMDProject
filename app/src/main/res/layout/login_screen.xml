@@ -34,7 +34,8 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginImage" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginImage"
+        android:text="dawoodumershaikh@gmail.com"/>
 
     <EditText
         android:id="@+id/login_password"
@@ -52,7 +53,8 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_Email" />
+        app:layout_constraintTop_toBottomOf="@+id/login_Email"
+        android:text="dawoodumer42"/>
 
     <Button
         android:id="@+id/sign_in"

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,13 +15,17 @@ import com.example.travelshare.R;
 
 import java.util.List;
 
+import retrofit2.Call;
+
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
-    private List<TripsData> myTTrips;
+//    private List<TripsData> myTTrips;
+    private List<Trip> myTTrips;
+
     private Context context;
     private Button SendReq;
 
-    public RVAdapter(List<TripsData> mtrips,Context context1)
+    public RVAdapter(List<Trip> mtrips,Context context1)
     {
         this.myTTrips=mtrips;
         this.context=context1;
@@ -41,12 +46,19 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-          final TripsData tripsdata= myTTrips.get(position);
-          holder.Name.setText(tripsdata.getName());
-          holder.Source_DEST.setText(tripsdata.getSource_DEST());
-          holder.CDate.setText(tripsdata.getCdate());
-          holder.Date.setText(tripsdata.getDate());
-          holder.Time.setText(tripsdata.getTime());
+          final Trip tripsdata= myTTrips.get(position);
+          holder.Name.setText(tripsdata.getDateTime());
+          holder.Source_DEST.setText(tripsdata.getSourceLocId() +"->" + tripsdata.getDestinationLocId());
+          holder.CDate.setText(tripsdata.getUserId());
+          holder.Date.setText("");
+          holder.Time.setText("");
+          holder.btnSend.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+
+                  Toast.makeText(v.getContext(), tripsdata.getId(), Toast.LENGTH_LONG).show();
+              }
+          });
     }
 
     @Override
@@ -54,13 +66,15 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         return myTTrips.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView Source_DEST;
         public TextView Name;
         public TextView Date;
         public TextView Time;
         public Button CDate;
+        public Button btnSend;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -69,6 +83,19 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
             Date=itemView.findViewById(R.id.datee);
             Time=itemView.findViewById(R.id.timee);
             CDate=itemView.findViewById(R.id.Cdate);
+
+            btnSend = itemView.findViewById(R.id.sendbtn);
+            //btnSend.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+
+
+//            Call<List<TripRequest>> respo = RetrofitClient.getClient().getTripRequests();
+            Toast.makeText(v.getContext(), Integer.toString(v.getId()), Toast.LENGTH_LONG).show();
+        }
+
     }
+
 }

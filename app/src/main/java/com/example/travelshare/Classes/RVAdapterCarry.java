@@ -15,11 +15,12 @@ import com.example.travelshare.R;
 import java.util.List;
 
 public class RVAdapterCarry extends RecyclerView.Adapter<RVAdapterCarry.CarryViewHolder> {
+    private List<Trip> myTrips;
 
-    private List<myTripsData> myTrips;
+//    private List<myTripsData> myTrips;
     private Context context;
 
-    public RVAdapterCarry(List<myTripsData> mtrips,Context context1)
+    public RVAdapterCarry(List<Trip> mtrips,Context context1)
     {
         this.myTrips=mtrips;
         this.context=context1;
@@ -34,11 +35,12 @@ public class RVAdapterCarry extends RecyclerView.Adapter<RVAdapterCarry.CarryVie
 
     @Override
     public void onBindViewHolder(CarryViewHolder holder, int position) {
-        final myTripsData mytripsdata= myTrips.get(position);
-        holder.src_dst.setText(mytripsdata.getSrc_dest());
-        holder.CarryDate.setText(mytripsdata.getCrrydate());
-        holder.CarryTime.setText(mytripsdata.getCrrytime());
-        holder.CrDate.setText(mytripsdata.getCrrdate());
+        final Trip mytripsdata= myTrips.get(position);
+
+        holder.src_dst.setText(mytripsdata.getSourceLocId() + " -> " + mytripsdata.getDestinationLocId());
+        holder.CarryDate.setText(mytripsdata.getDateTime());
+//        holder.CarryTime.setText(mytripsdata.getDateTime());
+        holder.CrDate.setText(mytripsdata.getUserId());
     }
 
     @Override
